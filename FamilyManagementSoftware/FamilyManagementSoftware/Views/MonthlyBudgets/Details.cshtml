@@ -1,0 +1,51 @@
+﻿@model FamilyManagementSoftware.Models.MonthlyBudget
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MonthlyBudget</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categorys.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categorys.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BudgetAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BudgetAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

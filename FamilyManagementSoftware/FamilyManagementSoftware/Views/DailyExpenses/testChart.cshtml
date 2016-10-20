@@ -1,0 +1,17 @@
+﻿@model FamilyManagementSoftware.Models.DailyExpense 
+@{
+    ViewBag.Title = "testChart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>testChart</h2>
+
+@using WebMatrix.Data;
+@{
+    var db = Database.Open("FamilyManagementSoftware");
+    var data = db.Query("SELECT Convert(varchar(3), DatePart(mm,Month)) as month,BudgetAmount,ActualAmount FROM MonthlyBudgets");
+    var myChart = new Chart(width: 600, height: 400)
+        .AddTitle("MonthlyReport")
+        .DataBindTable(dataSource: data, xField: "month")
+        .Write();
+}
